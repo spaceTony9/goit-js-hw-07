@@ -23,17 +23,15 @@ destroyButton.addEventListener("click", ev => {
 
 function createBoxes(amount) {
   let divSize = 30;
-  let markup = [];
+  let boxesMarkup = [];
   for (let i = 0; i < amount; i++) {
-    markup[i] = `<div style="background-color: ${getRandomHexColor()}; width: ${divSize}px; height: ${divSize}px;"></div>`;
+    boxesMarkup[i] = `<div style="background-color: ${getRandomHexColor()}; width: ${divSize}px; height: ${divSize}px;"></div>`;
     divSize += 10;
   }
-  markup = markup.join('');
-  return markup;
+  boxesMarkup = boxesMarkup.join("");
+  return boxesMarkup;
 }
 
 function destroyBoxes() {
-  while (divBoxes.firstChild) {
-    divBoxes.removeChild(divBoxes.firstChild);
-  }
+  divBoxes.innerHTML = "";
 }
